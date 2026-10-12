@@ -6,8 +6,13 @@
   <meta name="description" content="OnTime 대중교통 실증 서비스. 경기도 GBIS 버스 운행 데이터 수집·분석 현황과 목표 도착시간 기반 출발시각 계산 시연.">
   <meta name="theme-color" content="#0a1734">
   <title>OnTime | 대중교통 출발시각 결정 실증 서비스</title>
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css">
+  
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+:root{--navy:#0c1c38;--blue:#286bef;--mint:#27e0c6;--ink:#16253d;--muted:#677791;--border:#e2e8f1;--bg:#f6f8fc;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'DM Sans','Noto Sans KR',sans-serif;line-height:1.6;background:var(--white);letter-spacing:-.02em}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}h1,h2,h3,p{margin-top:0}.shell{width:min(1200px,calc(100% - 48px));margin-inline:auto}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:14px;z-index:99;background:white;padding:12px}.site-head{height:74px;border-bottom:1px solid #e8edf5;position:relative;background:#fff;z-index:3}.head-row{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{display:flex;align-items:center;gap:8px;font-size:23px;font-weight:800;letter-spacing:-.06em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:31px;height:31px;border-radius:9px;color:#fff;background:var(--blue);font-size:20px}.accent,.footer-brand span{color:var(--blue)}.brand-meta{font-size:9px;letter-spacing:.15em;color:#7889a4;border-left:1px solid #d7e2f2;padding-left:14px;margin-left:7px}.head-row nav{display:flex;gap:32px;font-size:13px;font-weight:700;color:#4b5870}.head-row nav a:hover{color:var(--blue)}.head-status{font-size:11px;border:1px solid #d2e7df;padding:7px 11px;border-radius:999px;color:#18694e;background:#f1fcf7;white-space:nowrap}.head-status i,.eyebrow .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#20c68f;margin-right:6px}.hero{background:linear-gradient(110deg,#0c1830 0%,#101e3c 58%,#13264d 100%);color:#fff;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:40px;padding-block:66px 74px}.eyebrow{font-size:11px;font-weight:700;color:#b8cce8;letter-spacing:.07em;margin-bottom:26px}.hero h1{font-size:clamp(34px,3.6vw,52px);line-height:1.35;letter-spacing:-.065em;margin:0 0 23px;font-weight:800}.hero h1 em{font-style:normal;color:#54edd7}.hero-lead{font-size:14px;max-width:500px;line-height:1.95;color:#bac8dd;margin-bottom:31px}.hero-cta{display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;border:0;border-radius:12px;padding:13px 20px;font-size:13px;font-weight:800;min-height:48px}.btn.primary{color:#fff;background:#286bef;box-shadow:0 9px 22px #164aaf35}.btn.primary:hover{background:#1559e1}.btn.ghost{border:1px solid #5a6e92;background:#263857;color:#fff}.btn span{font-size:17px}.hero-disclaimer{margin:28px 0 0;font-size:11px;color:#9fb0c9;line-height:1.9;max-width:470px}.hero-disclaimer strong{color:#b9d4ff}.map-panel{background:#142947;border:1px solid #3a5177;border-radius:22px;box-shadow:0 28px 60px #0004;overflow:hidden}.map-top,.map-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;color:#abc4e5;font-size:10px;font-weight:700}.map-top>span:first-child{color:#fff}.map-lamp{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3deac2;margin-right:7px}.map-illustration{width:100%;height:auto;display:block}.map-bottom{border-top:1px solid #2a4367;gap:10px;flex-wrap:wrap}.map-bottom b{color:#4de7d5;font-size:15px}.map-bottom .no-real{color:#85a1c5}.section{padding-block:88px}.section-intro{display:flex;justify-content:space-between;gap:55px;margin-bottom:35px;align-items:end}.section-intro h2{font-size:30px;letter-spacing:-.045em;line-height:1.4;margin:10px 0 0;color:var(--navy)}.section-intro>p{max-width:470px;font-size:13px;line-height:2;color:var(--muted);margin:0}.section-label{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--blue)}.cards{display:grid;gap:16px}.cards.three{grid-template-columns:repeat(3,1fr)}.info-card{border:1px solid #e3eaf5;border-radius:18px;padding:28px 25px 26px;background:white;min-height:225px}.tile-icon{font-size:16px;font-weight:800;color:var(--blue);margin-bottom:23px}.info-card h3{font-size:18px;margin-bottom:13px}.info-card p{font-size:12px;line-height:1.9;color:var(--muted);margin-bottom:23px}.small-tag{border-radius:6px;font-size:10px;font-weight:700;color:#146e57;background:#eafbf4;padding:6px 9px}.small-tag.amber{color:#8f6212;background:#fff6dc}.muted-section{background:var(--bg)}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:16px;background:white;overflow:hidden;margin-bottom:20px}.stats>div{padding:26px 32px;border-right:1px solid var(--border)}.stats>div:last-child{border-right:0}.stats strong{font-size:34px;font-weight:800;letter-spacing:-.06em;display:block;color:var(--navy)}.stats span{font-size:12px;font-weight:600;color:var(--muted)}.panel-board{background:white;border:1px solid var(--border);border-radius:18px;overflow:hidden}.panel-heading{display:flex;justify-content:space-between;align-items:center;padding:28px 28px 20px;gap:18px}.panel-heading h3{font-size:19px;margin:0 0 5px}.panel-heading p{font-size:12px;color:var(--muted);margin:0}.search-wrap{background:#f7f9fc;border:1px solid var(--border);padding:9px 14px;border-radius:10px;color:#9aa6b8;display:flex;gap:8px}.search-wrap input{border:0;background:transparent;outline:0;width:160px;max-width:100%;font-size:12px;color:var(--ink)}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}thead{background:#f8fafd;color:#70809a;font-size:11px}td,th{padding:14px 28px;border-top:1px solid #eef2f7;white-space:nowrap}td:first-child{font-weight:800;color:var(--navy)}.route-pill{background:#edf4ff;border:1px solid #d6e6fe;color:#2968c2;border-radius:6px;padding:4px 8px}.bar-bg{height:6px;width:min(230px,20vw);min-width:110px;background:#e8eef8;border-radius:9px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,#286bef,#41c5d9);border-radius:9px}.panel-foot{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:19px 28px;border-top:1px solid #edf1f8;font-size:11px;color:#667a99}.panel-foot a{color:var(--blue);font-weight:800}.note-box{margin-top:18px;border:1px solid #dce6f8;border-radius:12px;background:#eaf2ff;padding:18px 22px}.note-box strong{font-size:12px;color:#2357a5}.note-box p{font-size:11px;line-height:1.9;margin:5px 0 0;color:#567297}.calc-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:stretch}.form-panel,.result-panel{border-radius:20px;padding:34px;border:1px solid var(--border)}.form-panel h3{font-size:22px;margin-bottom:24px}.field{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;min-width:0}.field label{font-size:12px;font-weight:700;color:#455977}.field input,.field select{border:1px solid #dbe5f3;border-radius:10px;padding:13px 13px;background:#f8fafd;min-height:48px;width:100%;font-size:13px;color:var(--navy)}.field input:focus,.field select:focus{outline:2px solid #afd0ff}.field input[readonly]{background:#eef2f7;color:#71819a}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.helper{font-size:10px;color:#8292ab;line-height:1.6}.full{width:100%;margin-top:10px}.result-panel{background:#0f2142;color:white;border:0;display:flex;flex-direction:column;justify-content:flex-start}.result-eyebrow{font-size:10px;font-weight:800;letter-spacing:.1em;color:#72ddce;margin-bottom:41px}.result-kicker{font-size:12px;color:#aabedb}.result-time{font-size:68px;font-weight:800;letter-spacing:-.065em;line-height:1.25;margin:9px 0;color:#fff}.result-date{font-size:12px;color:#d0e0f6;margin:0 0 20px}.result-divider{height:1px;background:#2c456f;margin:24px 0 17px}.result-line{display:flex;justify-content:space-between;gap:16px;font-size:12px;margin:9px 0;color:#a6bedf}.result-line strong{color:#fff}.result-notice{margin-top:auto;padding:17px;border-radius:10px;background:#182e53;color:#bcd0e8;font-size:11px;line-height:1.85}.result-notice b{color:#fff}.flow{display:flex;gap:13px;align-items:stretch;margin-bottom:22px}.flow>div{flex:1;display:flex;flex-direction:column;background:#fff;border-radius:15px;border:1px solid var(--border);padding:23px 20px;min-width:0}.flow>div span{color:var(--blue);font-size:12px;font-weight:800}.flow>div b{font-size:14px;margin:9px 0 5px}.flow>div small{font-size:11px;color:var(--muted);line-height:1.7}.flow i{font-style:normal;color:#89a4ce;align-self:center}.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.evidence-grid article,.source-list{background:#fff;border-radius:15px;border:1px solid var(--border);padding:25px}.evidence-grid h3,.source-list h3{font-size:16px}.evidence-grid p,.source-list p{font-size:12px;line-height:1.9;color:var(--muted);margin-bottom:0}.source-list{margin-top:18px}.source-list a{font-size:12px;color:var(--blue);font-weight:700;display:inline-block;margin-top:12px}footer{background:#0e1a30;color:#a3b3d0;padding:30px 0}.footer-inner{display:flex;justify-content:space-between;gap:45px;align-items:center}.footer-brand{font-size:22px;color:white;font-weight:800;letter-spacing:-.07em}.footer-inner p{font-size:11px;margin:6px 0 0}.footer-inner>div:last-child{text-align:right;font-size:11px}.footer-inner>div:last-child span{color:#9bb9e3;font-weight:700}@media(max-width:900px){.hero-grid,.calc-layout{grid-template-columns:1fr}.map-panel{max-width:600px}.section-intro{display:block}.section-intro>p{margin-top:15px;max-width:none}.flow{flex-wrap:wrap}.flow>div{min-width:180px}.flow i{display:none}.head-row nav{gap:14px}}@media(max-width:660px){.shell{width:min(100% - 28px,1200px)}.site-head{height:64px}.head-row nav{display:none}.head-status{font-size:10px}.hero-grid{padding-block:45px;gap:28px}.hero h1{font-size:35px}.hero-lead{font-size:13px}.hero-disclaimer{font-size:10px}.section{padding-block:58px}.section-intro h2{font-size:25px}.cards.three,.evidence-grid{grid-template-columns:1fr}.info-card{min-height:0}.stats{grid-template-columns:repeat(2,1fr)}.stats>div{padding:20px}.stats>div:nth-child(2){border-right:0}.stats>div:nth-child(-n+2){border-bottom:1px solid var(--border)}.stats strong{font-size:29px}.panel-heading,.panel-foot{align-items:start;flex-direction:column}.panel-heading{padding:22px 18px 14px}.panel-foot{padding:16px 18px}.search-wrap{width:100%}.search-wrap input{width:100%}td,th{padding:11px 17px}.form-panel,.result-panel{padding:25px 21px}.result-time{font-size:55px}.footer-inner{display:block}.footer-inner>div:last-child{text-align:left;margin-top:20px}.field-row{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#main">본문으로 이동</a>
@@ -68,7 +73,7 @@
   <div class="panel-board">
    <div class="panel-heading"><div><h3>실증 노선별 구간 샘플</h3><p>지난 로컬 검증 기록의 학습 후보 행 수 · <span id="snapshotDate">2026-10-08</span> 기준</p></div><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="routeFilter" type="search" placeholder="버스 번호 검색" aria-label="버스 노선 번호 검색"></label></div>
    <div class="table-scroll"><table><thead><tr><th>버스 노선</th><th>GBIS routeId</th><th>학습 후보 구간</th><th>구간 수 비교 (상대값)</th></tr></thead><tbody id="routesBody"><tr><td colspan="4">데이터 불러오는 중...</td></tr></tbody></table></div>
-   <div class="panel-foot"><span id="dataStatus">스냅샷 데이터를 불러오는 중입니다.</span><a download href="./data/public_routes.csv">공개 노선 집계 CSV ↓</a></div>
+   <div class="panel-foot"><span id="dataStatus">스냅샷 데이터를 불러오는 중입니다.</span><a href="#" id="downloadCsv">공개 노선 집계 CSV ↓</a></div>
   </div>
   <div class="note-box"><strong>데이터 이용 안내</strong><p>이 집계는 개발자의 기존 수집 로그를 근거로 구성했습니다. 수집 시점 이후 운행 상황을 뜻하지 않습니다. 실제 운행 위치 갱신은 백엔드 자동수집기에서 수행하며, 현재 웹 시연 페이지는 실시간 API를 호출하지 않습니다.</p></div>
  </div>
@@ -110,5 +115,70 @@
  </section>
 </main>
 <footer><div class="shell footer-inner"><div><div class="footer-brand">On<span>Time</span> · Project Lab</div><p>AI 융합 캡스톤디자인 · 경기도 대중교통 출발시각 결정 서비스</p></div><div><span>공개 프로토타입 · 연구 및 개발 중</span><p>본 사이트는 실시간 교통 안내가 아닌 공공데이터 활용 실증 및 기능 검증용입니다.</p></div></div></footer>
-<script src="./app.js" defer></script>
+
+<script>
+const $=(id)=>document.getElementById(id);
+const num=(v)=>new Intl.NumberFormat("ko-KR").format(v);
+const clock=(d)=>new Intl.DateTimeFormat("ko-KR",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Seoul"}).format(d);
+const dateFmt=(d)=>new Intl.DateTimeFormat("ko-KR",{year:"numeric",month:"long",day:"numeric",weekday:"short",timeZone:"Asia/Seoul"}).format(d);
+const summaryFallback={meta:{snapshot_date:"2026-10-08",data_type:"과거 로컬 검증 집계"},metrics:{origin_count:16,active_route_count:7,position_snapshot_rows:2542,training_candidate_rows:755},routes:[{route_no:"31-7",route_id:"216000019",training_candidate_rows:278},{route_no:"88",route_id:"208000012",training_candidate_rows:190},{route_no:"15-2",route_id:"208000002",training_candidate_rows:105},{route_no:"2",route_id:"241253001",training_candidate_rows:69},{route_no:"32",route_id:"217000009",training_candidate_rows:50},{route_no:"8407",route_id:"216000045",training_candidate_rows:41},{route_no:"G8808",route_id:"210000108",training_candidate_rows:22}],origins:["시흥시청","배곧생명공원","배곧한울공원","오이도역","오이도 빨강등대","정왕역","시흥프리미엄아울렛","거북섬","월곶역","시흥능곡역","갯골생태공원","연꽃테마파크","물왕호수","신천역","시흥대야역","은계호수공원"]};
+let current=summaryFallback;
+function renderRoutes(filter=""){
+  const rows=(current.routes||[]).filter(r=>String(r.route_no||"").toLowerCase().includes(filter.toLowerCase()));
+  const max=Math.max(1,...(current.routes||[]).map(x=>Number(x.training_candidate_rows||0)));
+  const body=$("routesBody");body.replaceChildren();
+  if(!rows.length){const tr=document.createElement("tr");tr.innerHTML='<td colspan="4">검색 결과가 없습니다.</td>';body.append(tr);return;}
+  rows.forEach(r=>{
+    const tr=document.createElement("tr");
+    const routeNo=document.createElement("td");const pill=document.createElement("span");pill.className="route-pill";pill.textContent=r.route_no;routeNo.append(pill);
+    const rid=document.createElement("td");rid.textContent=r.route_id;
+    const count=document.createElement("td");count.textContent=Number.isFinite(Number(r.training_candidate_rows)) ? `${num(r.training_candidate_rows)}개` : "집계 미확인";
+    const barTd=document.createElement("td");const wrap=document.createElement("div");wrap.className="bar-bg";wrap.title=`${r.route_no}의 검증 후보 ${num(r.training_candidate_rows||0)}행`;const bar=document.createElement("div");bar.className="bar";bar.style.width=`${Math.min(100,100*Number(r.training_candidate_rows||0)/max)}%`;wrap.append(bar);barTd.append(wrap);
+    tr.append(routeNo,rid,count,barTd);body.append(tr);
+  });
+}
+function renderData(data){
+  current=data;
+  $("statOrigins").textContent=num(data.metrics.origin_count||0);
+  $("statRoutes").textContent=num(data.metrics.active_route_count||0);
+  $("statSnapshots").textContent=data.metrics.position_snapshot_rows==null?"—":num(data.metrics.position_snapshot_rows);
+  $("statSamples").textContent=data.metrics.training_candidate_rows==null?"—":num(data.metrics.training_candidate_rows);
+  $("snapshotDate").textContent=data.meta.snapshot_date||"날짜 미확인";
+  $("dataStatus").textContent=`${data.meta.data_type||"집계 데이터"} · ${data.meta.snapshot_date||"기준일 미확인"} · 실시간 아님`;
+  const sel=$("origin");sel.replaceChildren();(data.origins||[]).forEach(o=>{const opt=document.createElement("option");opt.value=o;opt.textContent=o;sel.append(opt)});
+  renderRoutes($("routeFilter").value);
+}
+$("routeFilter").addEventListener("input",e=>renderRoutes(e.target.value));
+fetch("./data/public_summary.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(renderData).catch(()=>{renderData(summaryFallback);$("dataStatus").textContent="내장된 2026-10-08 과거 스냅샷 표시 중 · 서버 데이터 파일을 읽지 못했습니다."});
+const datePartList=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Seoul",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+const dateParts=Object.fromEntries(datePartList.map(p=>[p.type,p.value]));
+$("arrivalDate").value=`${dateParts.year}-${dateParts.month}-${dateParts.day}`;
+function calculateFromInputs(e){
+ if(e)e.preventDefault();
+ const rawDate=$("arrivalDate").value, time=$("arrivalTime").value;
+ const travel=Number($("minutes").value),buffer=Number($("buffer").value);
+ if(!rawDate||!time||!Number.isFinite(travel)||!Number.isFinite(buffer)||travel<1||travel>1000||buffer<0||buffer>300){alert("입력한 날짜·시간·이동시간·여유시간을 확인해주세요.");return;}
+ const target=new Date(`${rawDate}T${time}:00+09:00`);
+ if(isNaN(target.getTime())){alert("날짜와 시간을 확인해주세요.");return;}
+ const depart=new Date(target.getTime()-(travel+buffer)*60000);
+ const planned=new Date(target.getTime()-buffer*60000);
+ $("resultTime").textContent=clock(depart);
+ $("resultDate").textContent=`${dateFmt(depart)} · ${$("origin").value} 출발 가정`;
+ $("resultArrival").textContent=`${dateFmt(target)} ${clock(target)}`;
+ $("resultPlanned").textContent=`${dateFmt(planned)} ${clock(planned)}`;
+ $("resultInput").textContent=`${travel}분 + ${buffer}분 = ${travel+buffer}분`;
+}
+$("planner").addEventListener("submit", calculateFromInputs);
+calculateFromInputs();
+
+$("downloadCsv").addEventListener("click",(e)=>{
+ e.preventDefault();
+ const head=["route_no","route_id","training_candidate_rows","snapshot_date","data_status"];
+ const items=current.routes.map(r=>[r.route_no,r.route_id,r.training_candidate_rows,current.meta.snapshot_date,"과거 로컬 수집 집계"]);
+ const csv="\ufeff"+[head,...items].map(row=>row.map(x=>String(x??"").replace(/"/g,'""')).map(x=>'"'+x+'"').join(",")).join("\r\n");
+ const url=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
+ const link=document.createElement("a");link.href=url;link.download="ontime_public_routes.csv";document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+});
+
+</script>
 </body></html>
