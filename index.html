@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OnTime 대중교통 실증 서비스. 경기도 GBIS 버스 운행 데이터 수집·분석 현황과 목표 도착시간 기반 출발시각 계산 시연.">
+  <meta name="theme-color" content="#0a1734">
+  <title>OnTime | 대중교통 출발시각 결정 실증 서비스</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="site-head">
+ <div class="shell head-row">
+  <a href="#top" class="brand" aria-label="OnTime 홈"><span class="brand-mark">↗</span><span>On<span class="accent">Time</span></span><span class="brand-meta">PROJECT LAB</span></a>
+  <nav aria-label="주요 메뉴"><a href="#service">서비스</a><a href="#routes">노선 데이터</a><a href="#calculator">출발시간 계산</a><a href="#evidence">데이터 활용</a></nav>
+  <span class="head-status"><i></i>공개 프로토타입</span>
+ </div>
+</header>
+<main id="main">
+ <section id="top" class="hero">
+  <div class="shell hero-grid">
+   <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> AI 융합 캡스톤디자인 · 경기도 대중교통</div>
+    <h1>제시간에 도착하기 위한<br><em>더 나은 출발 결정.</em></h1>
+    <p class="hero-lead">OnTime은 버스 운행 데이터의 변동성을 분석하여, 사용자가 원하는 도착시간에 맞춰 출발시각을 결정하도록 돕는 서비스를 개발하고 있습니다.</p>
+    <div class="hero-cta"><a class="btn primary" href="#calculator">출발시각 계산 체험 <span>↗</span></a><a class="btn ghost" href="#routes">수집 노선 보기 <span>→</span></a></div>
+    <p class="hero-disclaimer">현재 페이지는 <strong>개발 중인 공개 실증 버전</strong>입니다. 운행 데이터는 2026-10-08 로컬 테스트 집계이며 실시간 조회가 아닙니다.</p>
+   </div>
+   <div class="map-panel" role="img" aria-label="시흥에서 안양대학교로 이어지는 대중교통 경로를 상징한 개념도">
+     <div class="map-top"><span><span class="map-lamp"></span> 시흥시 → 안양대학교</span><span>ROUTE CONCEPT / 비실시간</span></div>
+     <svg viewBox="0 0 510 360" class="map-illustration" aria-hidden="true">
+      <defs><pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#355074" stroke-width="1" opacity=".32"/></pattern><filter id="glow"><feGaussianBlur stdDeviation="5"/></filter></defs>
+      <rect width="510" height="360" rx="22" fill="#101f3c"/><rect width="510" height="360" fill="url(#grid)"/>
+      <path d="M-30 130 L160 200 L255 95 L520 188 M90 -10 L160 200 L270 340 M-30 285 L200 190 L510 300" fill="none" stroke="#213b61" stroke-width="24"/>
+      <path d="M-30 130 L160 200 L255 95 L520 188 M90 -10 L160 200 L270 340 M-30 285 L200 190 L510 300" fill="none" stroke="#3b5780" stroke-width="2.4" stroke-dasharray="6 12"/>
+      <path d="M88 252 C137 260,126 148,217 170 C274 186,298 85,392 98" fill="none" stroke="#00debe" stroke-width="16" opacity=".24" filter="url(#glow)"/>
+      <path d="M88 252 C137 260,126 148,217 170 C274 186,298 85,392 98" fill="none" stroke="#48efd6" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 13"/>
+      <g transform="translate(88 252)"><circle r="22" fill="#16dabb" opacity=".15"/><circle r="12" fill="#43efd0" stroke="#fff" stroke-width="4"/></g>
+      <g transform="translate(392 98)"><circle r="24" fill="#ffb353" opacity=".17"/><circle r="12" fill="#ffb353" stroke="#fff" stroke-width="4"/></g>
+      <g transform="translate(214 166)"><rect x="-20" y="-15" width="40" height="30" rx="9" fill="#eef7ff"/><path d="M-11 -5h22v10h-22z" rx="3" fill="#1984e5"/><circle cx="-10" cy="15" r="5" fill="#69dcff"/><circle cx="10" cy="15" r="5" fill="#69dcff"/></g>
+      <g><rect x="28" y="270" width="131" height="42" rx="11" fill="#172d50" stroke="#446584"/><text x="41" y="295" fill="#e5f2ff" font-size="14" font-family="sans-serif">시흥시 · 출발</text></g>
+      <g><rect x="326" y="27" width="152" height="43" rx="11" fill="#172d50" stroke="#446584"/><text x="340" y="53" fill="#e5f2ff" font-size="14" font-family="sans-serif">안양대학교 · 도착</text></g>
+      <g><rect x="279" y="237" width="189" height="75" rx="15" fill="#ffffff"/><text x="294" y="260" fill="#687994" font-size="12" font-family="sans-serif">OnTime · 사용자 입력 기반</text><text x="294" y="288" fill="#132642" font-weight="bold" font-size="18" font-family="sans-serif">언제 출발할까요?</text></g>
+     </svg>
+     <div class="map-bottom"><span><b>16</b>개 시범 출발지</span><span><b>7</b>개 검증 수집 노선</span><span class="no-real">개념 경로 · 실제 지도 아님</span></div>
+   </div>
+  </div>
+ </section>
+ <section id="service" class="section shell">
+  <div class="section-intro"><div><span class="section-label">01 / SERVICE</span><h2>우리가 해결하려는 문제</h2></div><p>대중교통은 대기·환승·도로 지연에 따라 실제 이동시간이 달라집니다. OnTime은 '어떤 길이 빠른가'를 넘어 '언제 출발해야 하는가'를 고민합니다.</p></div>
+  <div class="cards three">
+   <article class="info-card"><div class="tile-icon">01</div><h3>도착 목표부터 입력</h3><p>출발지와 목적지, 도착 희망시간, 여유시간을 설정해 원하는 도착 기준을 명확히 합니다.</p><span class="small-tag">사용자 입력</span></article>
+   <article class="info-card"><div class="tile-icon">02</div><h3>공공 교통데이터 축적</h3><p>경기도 버스 위치 및 노선 조회 API를 활용한 로컬 수집기로 노선별 운행 관측값을 축적합니다.</p><span class="small-tag">API 활용 검증 완료</span></article>
+   <article class="info-card"><div class="tile-icon">03</div><h3>추천·설명 기능 개발</h3><p>향후 Random Forest 기반 이동시간 보정과 근거 설명을 결합하여 안전한 출발 결정을 돕습니다.</p><span class="small-tag amber">AI 모델 개발 단계</span></article>
+  </div>
+ </section>
+ <section id="routes" class="section muted-section">
+ <div class="shell">
+  <div class="section-intro"><div><span class="section-label">02 / OPEN DATA</span><h2>버스 운행 데이터 활용 현황</h2></div><p>2026년 10월 8일 로컬 자동수집기 검증 결과를 바탕으로 공개 가능한 집계만 제공합니다. 실시간 위치, 차량 번호판, 인증키는 게시하지 않습니다.</p></div>
+  <div class="stats">
+   <div><strong id="statOrigins">16</strong><span>시범 출발지</span></div>
+   <div><strong id="statRoutes">7</strong><span>테스트 수집 노선</span></div>
+   <div><strong id="statSnapshots">2,542</strong><span>버스 위치 관측 행</span></div>
+   <div><strong id="statSamples">755</strong><span>학습 후보 구간 데이터</span></div>
+  </div>
+  <div class="panel-board">
+   <div class="panel-heading"><div><h3>실증 노선별 구간 샘플</h3><p>지난 로컬 검증 기록의 학습 후보 행 수 · <span id="snapshotDate">2026-10-08</span> 기준</p></div><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="routeFilter" type="search" placeholder="버스 번호 검색" aria-label="버스 노선 번호 검색"></label></div>
+   <div class="table-scroll"><table><thead><tr><th>버스 노선</th><th>GBIS routeId</th><th>학습 후보 구간</th><th>구간 수 비교 (상대값)</th></tr></thead><tbody id="routesBody"><tr><td colspan="4">데이터 불러오는 중...</td></tr></tbody></table></div>
+   <div class="panel-foot"><span id="dataStatus">스냅샷 데이터를 불러오는 중입니다.</span><a download href="./data/public_routes.csv">공개 노선 집계 CSV ↓</a></div>
+  </div>
+  <div class="note-box"><strong>데이터 이용 안내</strong><p>이 집계는 개발자의 기존 수집 로그를 근거로 구성했습니다. 수집 시점 이후 운행 상황을 뜻하지 않습니다. 실제 운행 위치 갱신은 백엔드 자동수집기에서 수행하며, 현재 웹 시연 페이지는 실시간 API를 호출하지 않습니다.</p></div>
+ </div>
+ </section>
+ <section id="calculator" class="section shell">
+  <div class="section-intro"><div><span class="section-label">03 / INTERACTIVE DEMO</span><h2>도착시간 기준 출발 계산</h2></div><p>화면의 계산 기능은 실제 작동하는 <b>입력 기반 계산 시연</b>입니다. 이동시간은 사용자가 직접 가정하며, AI 예측값이나 실시간 교통정보를 사용하지 않습니다.</p></div>
+  <div class="calc-layout">
+   <form id="planner" class="form-panel">
+    <h3>언제 도착해야 하나요?</h3>
+    <div class="field"><label for="origin">출발지</label><select id="origin" required></select></div>
+    <div class="field"><label for="destination">목적지</label><input id="destination" value="안양대학교 안양캠퍼스" readonly></div>
+    <div class="field-row"><div class="field"><label for="arrivalDate">도착 날짜</label><input id="arrivalDate" type="date" required></div><div class="field"><label for="arrivalTime">도착 희망 시각</label><input id="arrivalTime" type="time" value="10:00" required></div></div>
+    <div class="field-row"><div class="field"><label for="minutes">가정한 총 이동시간 (분)</label><input id="minutes" type="number" min="1" max="1000" value="90" required><span class="helper">예시 입력값이며 API/AI 예측 결과가 아닙니다.</span></div><div class="field"><label for="buffer">사용자 여유시간 (분)</label><input id="buffer" type="number" min="0" max="300" value="15" required></div></div>
+    <button type="submit" class="btn primary full">출발시각 계산하기 <span>↗</span></button>
+   </form>
+   <div class="result-panel" aria-live="polite" id="resultPanel">
+    <span class="result-eyebrow">ON-TIME / BASIC CALCULATOR</span>
+    <div class="result-kicker">계산된 출발 권장 시각</div>
+    <div class="result-time" id="resultTime">—</div>
+    <p class="result-date" id="resultDate">입력값으로 출발시각을 계산해 보세요.</p>
+    <div class="result-divider"></div>
+    <div class="result-line"><span>목표 도착</span><strong id="resultArrival">—</strong></div>
+    <div class="result-line"><span>계획한 도착</span><strong id="resultPlanned">—</strong></div>
+    <div class="result-line"><span>반영된 이동시간 + 여유</span><strong id="resultInput">—</strong></div>
+    <div class="result-notice">현재 계산은 <b>사용자 가정 이동시간</b>을 사용한 단순 역산입니다. 실제 교통 상황을 반영하거나 정시 도착을 보장하지 않습니다.</div>
+   </div>
+  </div>
+ </section>
+ <section id="evidence" class="section muted-section">
+  <div class="shell">
+   <div class="section-intro"><div><span class="section-label">04 / DATA PIPELINE</span><h2>실제 공공데이터 활용 구조</h2></div><p>오픈API 호출 → 데이터베이스 저장 → 관측값 분석 → 학습 후보 생성으로 이어지는 개발 파이프라인을 로컬 환경에서 구축했습니다.</p></div>
+   <div class="flow"><div><span>01</span><b>경기도 GBIS</b><small>버스위치·노선 조회 API</small></div><i>→</i><div><span>02</span><b>Python 자동수집기</b><small>60초 간격 순차 호출</small></div><i>→</i><div><span>03</span><b>SQLite 데이터베이스</b><small>노선·차량 위치 관측 보관</small></div><i>→</i><div><span>04</span><b>구간 이동시간 분석</b><small>샘플 정제 및 CSV 출력</small></div></div>
+   <div class="evidence-grid">
+    <article><h3>현재 구현·검증된 내용</h3><p>경기도 버스노선 및 위치 조회 API 응답 확인, 7개 노선 자동수집 테스트, SQLite 저장, 구간 샘플 추출, 검증용 CSV 생성까지 로컬에서 확인했습니다.</p></article>
+    <article><h3>향후 추가 개발 예정</h3><p>정확도 검증, 장기 수집 오류 복구, 공식 운수업체 시간표 연계, 예측 모델 학습, 사용자별 실제 경로 추천과 지각 위험 표시를 개발할 계획입니다.</p></article>
+   </div>
+   <div class="source-list"><h3>활용 데이터 출처</h3><p>경기도 제공 공공데이터포털의 <strong>버스위치정보 조회 API</strong> 및 <strong>버스노선 조회 API</strong>를 로컬 실증에 활용했습니다. 수집 원천 데이터와 API는 제공기관의 최신 운영정책에 따라 이용합니다.</p><a href="https://www.data.go.kr/" target="_blank" rel="noreferrer">공공데이터포털 →</a></div>
+  </div>
+ </section>
+</main>
+<footer><div class="shell footer-inner"><div><div class="footer-brand">On<span>Time</span> · Project Lab</div><p>AI 융합 캡스톤디자인 · 경기도 대중교통 출발시각 결정 서비스</p></div><div><span>공개 프로토타입 · 연구 및 개발 중</span><p>본 사이트는 실시간 교통 안내가 아닌 공공데이터 활용 실증 및 기능 검증용입니다.</p></div></div></footer>
+<script src="./app.js" defer></script>
+</body></html>
